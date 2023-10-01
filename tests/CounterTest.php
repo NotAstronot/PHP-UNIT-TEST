@@ -43,6 +43,8 @@ use PHPUnit\Framework\TestCase; {
          */
         public function increment()
         {
+            Assert::markTestSkipped("cara Skipe unit test yang diinginkan");
+
             $this->counter->increment();
             Assert::assertEquals(1, $this->counter->getCounter());
         }
@@ -75,6 +77,15 @@ use PHPUnit\Framework\TestCase; {
         protected function after(): void
         {
             echo "After" . PHP_EOL;
+        }
+
+        /**
+         * @requires OSFAMILY Windows
+         */
+        public function testOnlyWindows(): void
+        {
+            self::assertTrue(true, "only in Windows");
+            // Jika ingin skip test kondisi tertentu seperti OS Dll
         }
     }
 }
