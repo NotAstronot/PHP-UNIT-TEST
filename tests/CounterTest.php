@@ -8,18 +8,34 @@ use PHPUnit\Framework\TestCase; {
     class CounterTest extends TestCase
     {
 
+        private Counter $counter;
+
+        protected function setUp(): void
+        {
+            $this->counter = new Counter();
+            echo "Membuat Counter" . PHP_EOL;
+        }
+
+
+        public function testIncrement(): void
+        {
+            self::assertEquals(0, $this->counter->getCounter());
+            self::markTestIncomplete("unit test belum selesai");
+            // unit test test increment belum selesai (ujicoba)
+            //cara test unit test code belum selesai
+        }
+
         public function testCounter()
         {
-            $counter = new Counter();
 
-            $counter->increment();
-            Assert::assertEquals(1, $counter->getCounter());
+            $this->counter->increment();
+            Assert::assertEquals(1, $this->counter->getCounter());
 
-            $counter->increment();
-            $this->assertEquals(2, $counter->getCounter());
+            $this->counter->increment();
+            $this->assertEquals(2, $this->counter->getCounter());
 
-            $counter->increment();
-            self::assertEquals(3, $counter->getCounter());
+            $this->counter->increment();
+            self::assertEquals(3, $this->counter->getCounter());
         }
 
         /**
@@ -27,28 +43,38 @@ use PHPUnit\Framework\TestCase; {
          */
         public function increment()
         {
-            $counter = new Counter();
-
-            $counter->increment();
-            Assert::assertEquals(1, $counter->getCounter());
+            $this->counter->increment();
+            Assert::assertEquals(1, $this->counter->getCounter());
         }
 
         public function testFirst(): Counter
         {
-            $counter = new Counter();
-            $counter->increment();
-            Assert::assertEquals(1, $counter->getCounter());
+            $this->counter->increment();
+            Assert::assertEquals(1, $this->counter->getCounter());
 
-            return $counter;
+            return $this->counter;
         }
 
         /**
          * @depends testFirst
          */
-        public function testSecond(Counter $counter): void
+        public function testSecond(): void
         {
-            $counter->increment();
-            Assert::assertEquals(2, $counter->getCounter());
+            $this->counter->increment();
+            Assert::assertEquals(1, $this->counter->getCounter());
+        }
+
+        protected function teardown(): void
+        {
+            echo "Tear down" . PHP_EOL;
+        }
+
+        /**
+         * @after
+         */
+        protected function after(): void
+        {
+            echo "After" . PHP_EOL;
         }
     }
 }
