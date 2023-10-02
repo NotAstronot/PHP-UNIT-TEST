@@ -1,0 +1,17 @@
+<phpunit color="true" stopOnError="true" verbose="true">
+    <testsuite>
+
+        <testsuite name="Learning">
+
+            <directory>tests</directory>
+        
+        </testsuite>
+    
+    </testsuite>
+
+</phpunit>
+
+
+
+
+

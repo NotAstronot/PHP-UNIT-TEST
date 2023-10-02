@@ -2,6 +2,8 @@
 
 namespace LearningPhp\UnitTest;
 
+use PhpParser\Node\Expr\Cast\Int_;
+
 class Product
 {
     private string $id, $name, $description;
@@ -18,41 +20,33 @@ class Product
     }
 
     /**
-     * 
-     *
      * @param string $id
      */
-    public function setId($id)
+    public function setId(string $id): void
     {
         $this->id = $id;
-
-        return $this;
     }
 
     /**
      * @return string 
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * 
-     *
      * @param string $name 
      */
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -62,47 +56,39 @@ class Product
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
-
-        return $this;
     }
 
     /**
      * @return int
      */
-    public function getPrice()
+    public function getPrice(): int
     {
         return $this->price;
     }
 
     /**
-     * 
-     *
      *  @param int $price
      */
-    public function setPrice($price)
+    public function setPrice(int $price): void
     {
         $this->price = $price;
-
-        return $this;
     }
 
     /**
      * @return int
      */
-    public function getQuantity()
+    public function getQuantity(): Int
     {
         return $this->quantity;
     }
 
     /**
-     *
-     *
      * @param int $quantity
      */
-    public function setQuantity($quantity)
+    public function setQuantity(int $quantity): void
     {
         $this->quantity = $quantity;
 
