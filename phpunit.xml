@@ -1,13 +1,13 @@
-<phpunit color="true" stopOnError="true" verbose="true">
-    <testsuite>
+<phpunit colors="true" stopOnError="true" verbose="true">
+    <testsuites>
 
-        <testsuite name="Learning">
+        <testsuite name="product">
 
             <directory>tests</directory>
         
         </testsuite>
     
-    </testsuite>
+    </testsuites>
 
 </phpunit>
 

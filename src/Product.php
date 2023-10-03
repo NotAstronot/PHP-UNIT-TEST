@@ -88,7 +88,7 @@ class Product
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity): void
+    public function setQuantity(int $quantity)
     {
         $this->quantity = $quantity;
 
