@@ -94,8 +94,8 @@ class CounterTest extends TestCase
      * @requires PHP >= 8
      * @requires OSFAMILY Darwin
      */
-    public function testOnlyForMacAndPHP8()
-    {
-        self::assertTrue(true, "Only for Mac and PHP 8");
-    }
+    // public function testOnlyForMacAndPHP8()
+    // {
+    //     self::assertTrue(true, "Only for Mac and PHP 8");
+    // }
 }
